@@ -28,8 +28,8 @@ app.on('select-client-certificate', (event, _webContents, url, list, callback) =
 	}
 	// Stop it just using the first cert in the list
 	event.preventDefault()
-	// Select the first cert regardless
-	callback(list[0])
+	// Select the last cert regardless
+	callback(list[list.length - 1])
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
