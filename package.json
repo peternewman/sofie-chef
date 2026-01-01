@@ -12,7 +12,7 @@
 		"watch:electron": "nodemon --exec npm start",
 		"lint": "run -T g:eslint . --ext .js,.jsx,.ts,.tsx",
 		"start": "electron ./dist/main.js",
-		"build:binary": "electron-builder",
+		"build:binary": "electron-builder --publish always",
 		"dev": "yarn && yarn build && concurrently --kill-others \"yarn watch:build\" \"yarn watch:electron\"",
 		"release:release": "sofie-version",
 		"release": "yarn release:release",
