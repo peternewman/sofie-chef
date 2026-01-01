@@ -20,7 +20,7 @@ app.on('ready', () => {
 	})
 })
 
-app.on('select-client-certificate', (event, webContents, url, list, callback) => {
+app.on('select-client-certificate', (event, _webContents, url, list, callback) => {
 	logger.info(`Picking a cert...`)
 	logger.info(`Finding a cert for "${url.toString()}"`)
 	for (const i of list) {
