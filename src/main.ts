@@ -21,10 +21,10 @@ app.on('ready', () => {
 })
 
 app.on('select-client-certificate', (event, webContents, url, list, callback) => {
-	this.logger.info(`Picking a cert...`)
-	this.logger.info(`Finding a cert for "${url.toString()}"`)
+	logger.info(`Picking a cert...`)
+	logger.info(`Finding a cert for "${url.toString()}"`)
 	for (const i of list) {
-		this.logger.info(`Considering cert from "${i.issuerName}" for "${i.subjectName}"`)
+		logger.info(`Considering cert from "${i.issuerName}" for "${i.subjectName}"`)
 	}
 	// Stop it just using the first cert in the list
 	event.preventDefault()
