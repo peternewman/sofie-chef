@@ -20,6 +20,18 @@ app.on('ready', () => {
 	})
 })
 
+app.on('select-client-certificate', (event, webContents, url, list, callback) => {
+	this.logger.info(`Picking a cert...`)
+	this.logger.info(`Finding a cert for "${url.toString()}"`)
+	for (const i of list) {
+		this.logger.info(`Considering cert from "${i.issuerName}" for "${i.subjectName}"`)
+	}
+	// Stop it just using the first cert in the list
+	event.preventDefault()
+	// Select the first cert regardless
+	callback(list[0])
+})
+
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
